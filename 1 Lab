@@ -1,0 +1,69 @@
+/**
+ * Програма для визначення, які з чисел Люка можуть бути записані числом трикутника
+ */
+import java.util.Scanner; //
+/**
+ * Створюю клас програм
+*/
+class Program
+{
+    /**
+     * створюю метод main
+     */
+    public static void main(String[] args)
+    {
+        /**
+         *створюю класс NumberLuke який має в собі два методи, один масив, конструктор
+         *Перший метод записує числа Люка в масив
+         *Другий метод визначає, які з чисел Люка можуть бути записані числом трикутника
+         */
+        class NumberLuke {
+            int[] Luke = new int[250]; // створюємо масив Luke
+
+            public NumberLuke() { // конструктор
+                Luke[0] = 2;
+                Luke[1] = 1;
+            }
+            /**
+             * Метод заповнення чисел Люка в масив Luke
+             */
+            void createLuke(int num) {
+                int i;
+                for (i = 0; i < num; i++) {
+                    Luke[i + 2] = Luke[i] + Luke[i+1];
+                }
+            }
+            /**
+             * Метод визначення чисел Люка які можна задати у формі чисел трикутника
+             */
+            void similar(int num) {
+                int j, temp = 0;
+                for (int n : Luke) { //foreach для масиву Luke
+                    if (n == 0) { //якщо n вийде за заповнений масив Luke то функція завершиться
+                        break;
+                    }
+                    for (j = temp; j < num * num; j++) {
+
+                        if (n == (j * (j + 1) / 2)) { // порівняння числа Люка з числом Трикутника
+                            System.out.print(n + "\n"); // якщо співпало то виводемо не екран
+                        } else if (n < (j * (j + 1) / 2)) { //якщо число трикутника стало більшим то в temp запишемо j-1 і завершимо цикл
+                            temp = j - 1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        int num;
+
+        Scanner in = new Scanner(System.in); // створюємо об'єкт класа scanner
+        System.out.print("Input a number: "); // просимо число від користувача
+        num = in.nextInt(); // записуємо це число в num за допомогою класу Scanner
+        NumberLuke first = new NumberLuke(); // створюємо об'єкт класа NumberLuke
+        first.createLuke(num); // створюємо масив чисел Люка
+        first.similar(num); // порівнюємо цей масив з числами трикутника
+        /**
+         * завершуємо програму
+         */
+    }
+}
