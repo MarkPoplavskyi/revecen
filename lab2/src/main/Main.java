@@ -11,8 +11,13 @@ public class Main {
      */
     static void SetProductName(product arr) {
         Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
 
+        int n = 0;
+        try {
+            n = in.nextInt();
+        }catch (Exception e) {
+            System.out.print("Неправильно введені данні");
+        }
         switch (n) {
             case 1 -> arr.setName("Молоко");
             case 2 -> arr.setName("Водяна продукція");
@@ -26,52 +31,98 @@ public class Main {
         }
     }
     /**
-     * метод встановлення інформаціїї про продукт
+     * метод встановлення інформації про продукт
      */
     static void SetProduct(product arr) {
-
             Scanner in = new Scanner(System.in);
-            System.out.print("Введіть id продукта ");
-            arr.setid(in.nextInt());
-            System.out.print(" 1. Молоко \n 2. Водяна продукція \n 3. Хлібна продукція \n 4. Цукерки \n 5. Овочі \n 6. Фрукти \n 7. алкогольні вироби \n 8. Тютюнові вироби \n");
+            System.out.print("Введіть id продукту ");
+            try {
+                arr.setid(in.nextInt());
+            }catch (Exception e) {
+                System.out.print("Неправильно введені данні");
+            }
+            System.out.print("""
+                     1. Молоко\s
+                     2. Водяна продукція\s
+                     3. Хлібна продукція\s
+                     4. Цукерки\s
+                     5. Овочі\s
+                     6. Фрукти\s
+                     7. алкогольні вироби\s
+                     8. Тютюнові вироби\s
+                    """);
+        try {
             SetProductName(arr);
-            System.out.print("Введіть виробника продукта ");
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+            return;
+    }
+            System.out.print("Введіть виробника продукту ");
+        try {
             arr.setCreator(in.next());
-            System.out.print("Введіть ціну продукта ");
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+            return;
+    }
+            System.out.print("Введіть ціну продукту ");
+        try{
             arr.setPrice(in.nextInt());
-            System.out.print("Введіть термін продукта дії у днях ");
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+            return;
+    }
+            System.out.print("Введіть термін продукту дії у днях ");
+        try{
             arr.setLife(in.nextInt());
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+            return;
+    }
             System.out.print("Введіть кількість продукту ");
+        try {
             arr.setNumber(in.nextInt());
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+        return;
+    }
         }
 
     /**
      * Пошук товарів по найменуванню
+     * i = counter
+     * nb - counter
+     * temp - Найменування товару яке шукаємо
      */
     static void ProductOutputByName(product[] arr, int Num)
     {
         Scanner in = new Scanner(System.in);
         int i = 0,nb = 0;
+        String temp = null;
         System.out.print("Введіть найменування товару серед цих\n");
         System.out.print(" 1. Молоко \n 2. Водяна продукція \n 3. Хлібна продукція \n 4. Цукерки \n 5. Овочі \n 6. Фрукти \n 7. алкогольні вироби \n 8. Тютюнові вироби \n");
-        String temp = in.nextLine();
-        while (i<Num)
+        try{
+        temp = in.nextLine();
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+    }
+        for(i=0;i<Num;i++)
         {
         if((arr[i].getName().equals(temp)))
         {
-            arr[i].PrintValue();
+            System.out.print(arr[i].toString());
             nb++;
         }
-            i++;
         }
         if (nb==0)
         {
             System.out.print("Продукту немає\n");
         }
-
     }
     /**
-     * Пошук товарів по ціні
+     * Пошук товарів за ціною
+     * i = counter
+     * nb - counter
+     * temp - ціну яку шукаємо
      */
     static void ProductOutputByPrice(product[] arr, int Num)
     {
@@ -83,7 +134,7 @@ public class Main {
         {
             if(temp >= arr[i].getPrice())
             {
-                arr[i].PrintValue();
+                System.out.print(arr[i].toString());
                 nb++;
             }
             i++;
@@ -95,6 +146,9 @@ public class Main {
     }
     /**
      * Пошук товарів по терміну дії
+     * i = counter
+     * nb - counter
+     * temp - найвище число яке не повинно перевищувати
      */
     static void ProductOutputByLife(product[] arr, int Num)
     {
@@ -106,7 +160,7 @@ public class Main {
         {
             if(temp >= arr[i].getLife())
             {
-                arr[i].PrintValue();
+                System.out.print(arr[i].toString());
                 nb++;
             }
             i++;
@@ -119,12 +173,19 @@ public class Main {
 
     /**
      * Моя функція мейн
+     * Num кількість продукту
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         product[] arr = new product[100];
+        int Num = 0;
         System.out.print("Введіть кількість товару ");
-        int Num = in.nextInt();
+        try {
+        Num = in.nextInt();
+    }catch (Exception e) {
+        System.out.print("Неправильно введені данні");
+        return;
+    }
         int i;
         for (i = 0; i < Num; i++) {
             arr[i] = new product();
@@ -135,7 +196,3 @@ public class Main {
         ProductOutputByLife(arr,Num);
     }
 }
-
-
-
-

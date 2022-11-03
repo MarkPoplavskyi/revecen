@@ -3,6 +3,12 @@ package Product;
 
 /**
  * мій клас продуктів
+ * id - це айді продукту
+ * Name - Найменування
+ * creator - виробник
+ * price - ціна
+ * life - термін дії
+ * number - кількість
  */
 
 public class product {
@@ -15,7 +21,7 @@ public class product {
     private int number;
 
     /**
-     * сеттери
+     * сетери
      */
     public void setid(int id)
     {this.id = id;}
@@ -34,15 +40,16 @@ public class product {
     public void setNumber(int number)
     {this.number = number;}
     /**
-     * вивід на єкран
+     * вивід на екран
      */
-    public void PrintValue()
+    public String toString()
     {
-        System.out.print("-------------------------------------------------------------------------\n");
-        System.out.print("\n"+id+"\n"+Name+"\n"+creator+"\n"+price+"\n"+life+"d"+"\n"+number+"\n");
+        return "-------------------------------------------------------------------------\n"+id+"\n"+Name+"\n"+creator+"\n"+price+"\n"+life+"d"+"\n"+number+"\n";
     }
     /**
-     * getter
+     * getPrice - повертає ціну продукту
+     * getLife - повертає термін дії продукту
+     * getName - повертає найменування продукту
      */
     public int getPrice()
     {return price;}
