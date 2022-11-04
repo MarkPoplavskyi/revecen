@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     /**
-     * метод який виводить на екран найменнування товару
+     * метод який встановлення найменнування товару
      */
     static void SetProductName(product arr) {
         Scanner in = new Scanner(System.in);
@@ -33,14 +33,11 @@ public class Main {
     /**
      * метод встановлення інформації про продукт
      */
-    static void SetProduct(product arr) {
+       static void SetProduct(product arr) {
             Scanner in = new Scanner(System.in);
             System.out.print("Введіть id продукту ");
             try {
                 arr.setid(in.nextInt());
-            }catch (Exception e) {
-                System.out.print("Неправильно введені данні");
-            }
             System.out.print("""
                      1. Молоко\s
                      2. Водяна продукція\s
@@ -51,41 +48,21 @@ public class Main {
                      7. алкогольні вироби\s
                      8. Тютюнові вироби\s
                     """);
-        try {
+
             SetProductName(arr);
-    }catch (Exception e) {
-        System.out.print("Неправильно введені данні");
-            return;
-    }
             System.out.print("Введіть виробника продукту ");
-        try {
             arr.setCreator(in.next());
-    }catch (Exception e) {
-        System.out.print("Неправильно введені данні");
-            return;
-    }
             System.out.print("Введіть ціну продукту ");
-        try{
             arr.setPrice(in.nextInt());
-    }catch (Exception e) {
-        System.out.print("Неправильно введені данні");
-            return;
-    }
             System.out.print("Введіть термін продукту дії у днях ");
-        try{
             arr.setLife(in.nextInt());
-    }catch (Exception e) {
-        System.out.print("Неправильно введені данні");
-            return;
-    }
             System.out.print("Введіть кількість продукту ");
-        try {
             arr.setNumber(in.nextInt());
-    }catch (Exception e) {
-        System.out.print("Неправильно введені данні");
+    } catch (Exception e)
+            {
+        System.out.print("Неправильно введені данні\n");
         return;
     }
-        }
 
     /**
      * Пошук товарів по найменуванню
