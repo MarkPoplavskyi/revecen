@@ -1,0 +1,41 @@
+груд. 06, 2022 1:26:54 ДП main.MenuManaging mainMenuText
+INFO: Print main menu
+груд. 06, 2022 1:26:58 ДП main.MenuManaging deviceMenuText
+INFO: Print device menu
+груд. 06, 2022 1:27:15 ДП command.RegulateCommands certainty
+INFO: user choose 6 command
+груд. 06, 2022 1:27:17 ДП command.RegulateCommands certainty
+INFO: 
+Name='toaster', power=800, state=false set timer for 20.0 hours
+груд. 06, 2022 1:27:17 ДП main.MenuManaging mainMenuText
+INFO: Print main menu
+груд. 06, 2022 1:27:21 ДП main.MenuManaging deviceMenuText
+INFO: Print device menu
+груд. 06, 2022 1:27:37 ДП command.RegulateCommands certainty
+INFO: user choose 
+Name='tv', power=100, state=false device
+груд. 06, 2022 1:27:40 ДП command.RegulateCommands certainty
+INFO: user choose 2 regime
+груд. 06, 2022 1:27:40 ДП command.RegulateCommands certainty
+INFO: 
+Name='toaster', power=800, state=false now is working in 2 regime
+груд. 06, 2022 1:27:40 ДП main.MenuManaging mainMenuText
+INFO: Print main menu
+груд. 06, 2022 1:27:53 ДП main.MenuManaging deviceMenuText
+INFO: Print device menu
+груд. 06, 2022 1:30:30 ДП command.RegulateCommands certainty
+INFO: user choose 
+Name='freezer', power=250, state=false device
+груд. 06, 2022 1:30:33 ДП command.RegulateCommands certainty
+INFO: user choose 2 regime
+груд. 06, 2022 1:30:33 ДП command.RegulateCommands certainty
+INFO: 
+Name='vacuum cleaner', power=910, state=false, regime=MAX now is working in 2 regime
+груд. 06, 2022 1:30:33 ДП main.MenuManaging mainMenuText
+INFO: Print main menu
+груд. 06, 2022 1:30:38 ДП command.RegulateCommands certainty
+INFO: user choose sort and print all device
+груд. 06, 2022 1:30:38 ДП main.MenuManaging mainMenuText
+INFO: Print main menu
+груд. 06, 2022 1:32:11 ДП command.action.SearchByParametersCom SearchByParameters
+INFO: User choose Electronic device

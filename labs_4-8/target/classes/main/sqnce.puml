@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+User -> Menu:\t  Request\t\t
+Menu --> User:\tResponse
+
+User -> Menu:\t   Request
+User <-- Menu: \tResponse
+@enduml
