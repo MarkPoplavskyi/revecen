@@ -1,0 +1,28 @@
+Turn number 1
+Damage done(with critical damage): 1502
+
+2
+1. UserDroidSniper(HP: 2448AR: 1850 ES: 2800 Dmg: 1200)
+Damage done820
+
+3
+1. UserDroidSword(HP: 3880AR: 1500 ES: 1750 Dmg: 950)
+Turn number 4
+Damage done(with critical damage): 1621
+
+5
+1. UserDroidSniper(HP: 827AR: 1850 ES: 1600 Dmg: 1200)
+Damage done2150
+
+6
+1. UserDroidSword(HP: 1730AR: 1500 ES: 800 Dmg: 950)
+Turn number 7
+Damage done747
+
+8
+1. UserDroidSniper(HP: 80AR: 1850 ES: 400 Dmg: 1200)
+Damage done2300
+
+9
+[31mwinner
+1. UserDroidSniper(HP: 80AR: 1850 ES: 400 Dmg: 1200)
